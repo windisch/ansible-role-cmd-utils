@@ -1,0 +1,38 @@
+- name: install zsh
+  package:
+    name: zsh
+    state: latest
+
+- name: Install virtualenvwrapper
+  pip:
+    name: "{{ item }}"
+    executable: pip3
+    extra_args: --upgrade
+  become: true
+  with_items: 
+    - virtualenv
+    - virtualenvwrapper
+
+- name: Make zsh default shell
+  user: name={{ ansible_user_id }} shell=/usr/bin/zsh
+  become: true
+
+- name: Clone oh-my-zsh
+  git:
+    repo: "{{ cmd_utils_omz_git_repo }}"
+    dest: "{{ cmd_utils_omz_path }}"
+
+- name: Copy zshrc
+  template:
+    src: zshrc.j2
+    dest: "{{ cmd_utils_zsh_rc }}"
+
+- name: Copy fzf helpers
+  template:
+    src: fzf_helpers.j2
+    dest: "{{ cmd_utils_fzf_helpers }}"
+
+- name: Copy ssh helpers
+  template:
+    src: ssh_helpers.j2
+    dest: "{{ cmd_utils_ssh_helpers }}"
