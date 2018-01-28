@@ -1,0 +1,25 @@
+
+# The default configuration file of tmux
+cmd_utils_tmux_config_file: "{{ ansible_env.HOME }}/.tmux.conf"
+
+# Private key
+cmd_utils_ssh_private_key: "{{ ansible_env.HOME }}/.ssh/id_rsa"
+
+# SSH
+cmd_utils_ssh_rc_file: "{{ ansible_env.HOME }}/.ssh/rc"
+cmd_utils_ssh_helpers: "{{ ansible_env.HOME }}/.ssh_helpers"
+
+# ZSH and oh-my-zsh
+cmd_utils_zsh_rc: "{{ ansible_env.HOME }}/.zshrc"
+cmd_utils_omz_git_repo: https://github.com/robbyrussell/oh-my-zsh
+cmd_utils_omz_path: "{{ ansible_env.HOME }}/.oh-my-zsh"
+
+cmd_utils_python_bin: /usr/bin/python3
+
+# fzf
+cmd_utils_fzf_repo_path: https://github.com/junegunn/fzf.git 
+cmd_utils_fzf_install_path: "{{ ansible_env.HOME }}/.fzf"
+cmd_utils_fzf_helpers: "{{ ansible_env.HOME }}/.fzf_helpers"
+
+# Alias 
+cmd_utils_alias_file: "{{ ansible_env.HOME }}/.aliases"
