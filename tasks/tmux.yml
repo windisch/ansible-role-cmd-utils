@@ -6,7 +6,7 @@
 - name: Copy tmux.conf
   copy:
     src: tmux.conf
-    dest: "/root/.tmux.conf"
+    dest: "{{ cmd_utils_tmux_config_file }}"
 
 # Export TERM variable. This is needed for TMUX to display colors in
 # VIM correctly
