@@ -31,7 +31,7 @@
 
 - name: Set alias for gitv
   lineinfile:
-    path: "{{ ansible_env.HOME }}/.aliases"
+    path: "{{ cmd_utils_alias_file }}"
     line: "alias gitv='git log --all --branches --graph --oneline --decorate'"
     create: yes
 
