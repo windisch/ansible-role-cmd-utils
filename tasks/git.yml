@@ -35,3 +35,7 @@
     line: "alias gitv='git log --all --branches --graph --oneline --decorate'"
     create: yes
 
+- name: Copy gitignore
+  copy:
+    src: gitignore
+    dest: "{{ ansible_env.HOME }}/.gitignore"
