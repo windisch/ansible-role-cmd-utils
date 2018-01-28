@@ -1,0 +1,20 @@
+# checkout git branches
+fgit() {
+ local branches branch
+ branches=$(git branch -vv) &&
+ branch=$(echo "$branches" | fzf +m) &&
+ git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+}
+
+# cd to selected directory
+fcd() {
+ local dir
+ dir=$(find ${1:-.} -path '*/\.*' -prune \
+     -o -type d -print 2> /dev/null | fzf +m) &&
+ cd "$dir"
+}
+
+# repeat history
+fhist() {
+ print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
+}
