@@ -1,0 +1,15 @@
+- name: install go
+  package:
+    name: golang-go
+    state: latest
+
+- name: Cloning fzf repository
+  git:
+    repo: '{{ cmd_utils_fzf_repo_path }}'
+    dest: '{{ cmd_utils_fzf_install_path }}'
+    depth: 1
+
+- name: Install fzf
+  shell: ./install --completion --update-rc
+  args:
+    chdir: '{{ cmd_utils_fzf_install_path }}'
