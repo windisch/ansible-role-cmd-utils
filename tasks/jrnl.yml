@@ -1,0 +1,14 @@
+- name: Install jrnl
+  pip:
+    name: jrnl
+    executable: pip3
+    extra_args: --upgrade
+  become: true
+
+# Important: Note the whitespace before the alias. That ensures that
+# jrnl entries will not show up in history!
+- name: Set alias for jrnl
+  lineinfile:
+    path: "{{ ansible_env.HOME }}/.aliases"
+    line: "alias jrnl=' /usr/bin/jrnl'"
+    create: yes
