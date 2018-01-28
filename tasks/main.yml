@@ -1,0 +1,15 @@
+
+- name: Configure git
+  include_tasks: git.yml
+
+- name: Configure zsh
+  include_tasks: zsh.yml
+
+- name: Configure tmux
+  include_tasks: tmux.yml
+
+- name: Set alias
+  lineinfile:
+    path: "{{ ansible_env.HOME }}/.aliases"
+    line: "alias ll='ls -lah'"
+    create: yes
