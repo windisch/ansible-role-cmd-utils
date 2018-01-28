@@ -1,0 +1,37 @@
+# Configure GIT
+- name: Use VIM as git core tool
+  git_config:
+    name: core.editor
+    value: vim
+    scope: global
+
+- name: Use VIM as git diff-tool
+  git_config:
+    name: diff.tool
+    value: vimdiff
+    scope: global
+
+- name: Disable prompt when diffing in git
+  git_config:
+    name: difftool.prompt
+    value: false
+    scope: global
+
+- name: Use VIM as git merge-tool
+  git_config:
+    name: merge.tool
+    value: vimdiff
+    scope: global
+
+- name: Git push only current
+  git_config:
+    name: push.default
+    value: upstream
+    scope: global
+
+- name: Set alias for gitv
+  lineinfile:
+    path: "{{ ansible_env.HOME }}/.aliases"
+    line: "alias gitv='git log --all --branches --graph --oneline --decorate'"
+    create: yes
+
