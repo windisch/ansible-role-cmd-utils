@@ -1,0 +1,34 @@
+## Compiled source ##
+*.com
+*.dll
+*.exe
+*.o
+*.so
+
+## Logs and databases ##
+*.log
+*.sql
+*.sqlite
+
+## tod files ++
+*.otl
+
+## swp files of VIM ##
+*.swm
+*.swn
+*.swo
+*.swp
+
+## OS generated Files ##
+.Trashes
+
+## LaTeX stuff ##
+*.toc
+*.bbl
+*.aux
+*.blg
+*.dvi
+*.pdf
+
+## Ansible
+*.retry 
