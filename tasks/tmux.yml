@@ -1,0 +1,28 @@
+- name: install tmux
+  package:
+    name: tmux
+    state: latest
+
+- name: Copy tmux.conf
+  copy:
+    src: tmux.conf
+    dest: "/root/.tmux.conf"
+
+# Export TERM variable. This is needed for TMUX to display colors in
+# VIM correctly
+- name: Export color environment variable
+  lineinfile:
+    path: "{{ ansible_env.HOME }}/.zshenv"
+    line: TERM=xterm-256color
+    create: true
+
+- name: Update tmux configuration
+  blockinfile:
+    path: "{{ cmd_utils_ssh_rc_file }}"
+    marker: "# BLOCK MANAGED BY ANSIBLE"
+    create: yes
+    content: |
+      # Fix SSH auth socket location so agent forwarding works with tmux
+      if test "$SSH_AUTH_SOCK" ; then
+        ln -sf $SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock
+      fi
