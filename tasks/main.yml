@@ -1,15 +1,25 @@
-
 - name: Configure git
   include_tasks: git.yml
 
-- name: Configure zsh
+- name: Install and configure zsh
   include_tasks: zsh.yml
 
-- name: Configure tmux
+- name: Install and configure tmux
   include_tasks: tmux.yml
 
-- name: Set alias
+- name: Install and configure fzf
+  include_tasks: fzf.yml
+
+- name: Set alias ll
   lineinfile:
     path: "{{ ansible_env.HOME }}/.aliases"
     line: "alias ll='ls -lah'"
+    create: yes
+
+# Important: Note the whitespace before the alias. That ensures that
+# jrnl entries will not show up in history!
+- name: Set alias for jrnl
+  lineinfile:
+    path: "{{ ansible_env.HOME }}/.aliases"
+    line: "alias jrnl=' /usr/bin/jrnl'"
     create: yes
