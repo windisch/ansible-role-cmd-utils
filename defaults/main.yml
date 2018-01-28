@@ -13,6 +13,7 @@ cmd_utils_ssh_helpers: "{{ ansible_env.HOME }}/.ssh_helpers"
 cmd_utils_zsh_rc: "{{ ansible_env.HOME }}/.zshrc"
 cmd_utils_omz_git_repo: https://github.com/robbyrussell/oh-my-zsh
 cmd_utils_omz_path: "{{ ansible_env.HOME }}/.oh-my-zsh"
+cmd_utils_zsh_dircolors: "{{ ansible_env.HOME }}/.zsh_dircolors"
 
 cmd_utils_python_bin: /usr/bin/python3
 

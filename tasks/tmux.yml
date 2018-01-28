@@ -16,7 +16,12 @@
     line: TERM=xterm-256color
     create: true
 
-- name: Update tmux configuration
+- name: Make sure that .ssh dir exists
+- file:
+    path: "{{ cmd_utils_ssh_dir }}"
+    state: directory
+
+- name: Take care of ssh-agents under tmux
   blockinfile:
     path: "{{ cmd_utils_ssh_rc_file }}"
     marker: "# BLOCK MANAGED BY ANSIBLE"
