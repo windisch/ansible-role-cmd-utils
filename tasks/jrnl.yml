@@ -9,6 +9,6 @@
 # jrnl entries will not show up in history!
 - name: Set alias for jrnl
   lineinfile:
-    path: "{{ ansible_env.HOME }}/.aliases"
+    path: "{{ cmd_utils_alias_file }}"
     line: "alias jrnl=' /usr/bin/jrnl'"
     create: yes
