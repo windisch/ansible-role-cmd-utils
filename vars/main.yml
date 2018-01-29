@@ -1,0 +1,2 @@
+# SSH
+cmd_utils_ssh_rc_file: "{{ cmd_utils_ssh_dir }}/rc"
