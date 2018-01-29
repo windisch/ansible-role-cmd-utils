@@ -17,7 +17,7 @@
     create: true
 
 - name: Make sure that .ssh dir exists
-- file:
+  file:
     path: "{{ cmd_utils_ssh_dir }}"
     state: directory
 
