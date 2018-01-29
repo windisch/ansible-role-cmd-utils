@@ -1,0 +1,56 @@
+# Path to your oh-my-zsh installation.
+export ZSH={{ cmd_utils_omz_path }}
+
+ZSH_THEME="minimal"
+
+# DIRCOLORS
+eval `dircolors {{ cmd_utils_zsh_dircolors }}`
+
+# Do not write commands in history that start with whitespace
+setopt HIST_IGNORE_SPACE
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git)
+
+#Use correct python in virtualenvwrapper
+export VIRTUALENVWRAPPER_PYTHON={{ cmd_utils_python_bin }}
+
+###Load commands of virtualenvwrapper
+source `which virtualenvwrapper.sh`
+
+# Source additional aliases
+source {{ cmd_utils_alias_file }}
+
+# Source helpers
+source {{ cmd_utils_ssh_helpers }}
+source {{ cmd_utils_fzf_helpers }}
+
+# Start ssh agent (from ssh_helpers)
+sshagent_init
+
+# Source oh-my-zsh
+source {{ cmd_utils_omz_path }}/oh-my-zsh.sh
+
+# fzf integration
+# ---------
+if [[ ! "$PATH" == *{{ cmd_utils_fzf_install_path }}/bin* ]]; then
+  export PATH="$PATH:{{ cmd_utils_fzf_install_path }}/bin"
+fi
+
+# Auto-completion
+# ---------------
+[[ $- == *i* ]] && source "{{ cmd_utils_fzf_install_path }}/shell/completion.zsh" 2> /dev/null
+
+# Key bindings
+# ------------
+source "{{ cmd_utils_fzf_install_path }}/shell/key-bindings.zsh"
+
+# start tmux automatically (make sure that this is the last part of
+# this config file)
+if [[ -z "$TMUX" ]]
+then
+   tmux new-session
+fi
