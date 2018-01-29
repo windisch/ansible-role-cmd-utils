@@ -36,3 +36,8 @@
   template:
     src: ssh_helpers.j2
     dest: "{{ cmd_utils_ssh_helpers }}"
+
+- name: Copy zsh dircolors
+  copy:
+    src: dircolors
+    dest: "{{ cmd_utils_zsh_dircolors }}"
