@@ -5,11 +5,11 @@
     extra_args: --upgrade
   become: true
 
- - name: Set alias for jrnl
-   lineinfile:
-     path: "{{ cmd_utils_alias_file }}"
-     line: "alias jrnl=' /usr/bin/jrnl'"
-     create: yes
+- name: Set alias for jrnl
+  lineinfile:
+    path: "{{ cmd_utils_alias_file }}"
+    line: "alias jrnl=' /usr/bin/jrnl'"
+    create: yes
 
 - name: Copy jrnl config
   template:
