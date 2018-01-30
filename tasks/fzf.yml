@@ -12,6 +12,6 @@
     depth: 1
 
 - name: Install fzf
-  shell: ./install --completion --update-rc
+  shell: ./install --completion --no-update-rc
   args:
     chdir: '{{ cmd_utils_fzf_install_path }}'
