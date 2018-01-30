@@ -1,9 +1,9 @@
 # checkout git branches
 fgit() {
  local branches branch
- branches=$(git branch -vv) &&
+ branches=$(git branch -vv --all) &&
  branch=$(echo "$branches" | fzf +m) &&
- git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+ git checkout -b $(echo "$branch" | awk '{print $1}' | sed "s/.* //" | sed -e 's/origin\///g')
 }
 
 # cd to selected directory
