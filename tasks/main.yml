@@ -10,6 +10,9 @@
 - name: Install and configure tmux
   include_tasks: tmux.yml
 
+- name: Install and configure jrnl
+  include_tasks: jrnl.yml
+
 - name: Set alias ll
   lineinfile:
     path: "{{ cmd_utils_alias_file }}"
