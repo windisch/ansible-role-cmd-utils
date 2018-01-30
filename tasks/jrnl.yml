@@ -12,3 +12,8 @@
      path: "{{ cmd_utils_alias_file }}"
      line: "alias jrnl=' /usr/bin/jrnl'"
      create: yes
+
+- name: Copy jrnl config
+  template:
+    src: jrnl_config.j2
+    dest: "{{ cmd_utils_jrnl_config_file }}"

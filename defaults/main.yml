@@ -24,3 +24,7 @@ cmd_utils_fzf_helpers: "{{ ansible_env.HOME }}/.fzf_helpers"
 
 # Alias 
 cmd_utils_alias_file: "{{ ansible_env.HOME }}/.aliases"
+
+# JRNL
+cmd_utils_jrnl_config_file: "{{ ansible_env.HOME }}/.jrnl_config"
+cmd_utils_jrnl_log_file: "{{ ansible_env.HOME }}/WorkLog"
