@@ -2,9 +2,11 @@
 
 This ansible role installs and configures a lot of useful command line
 tools. The configurations are highly customized und mainly fit to my
-purposes. Feel free to work and adapt it to your needs.
+purposes. Feel free to adapt it to your needs.
 
-## Tools
+## Utilities
+
+The following software packages are installed and configured:
 
 - `zsh`: **The** shell for unix-like systems
 - `oh-my-zsh`: Collection of useful tools and configurations around `zsh`
@@ -18,8 +20,8 @@ purposes. Feel free to work and adapt it to your needs.
 
 ### tmux and ssh
 
-This role takes care that `ssh-agent` with your private key registred
-is loaded in all panes and windows of your tmux session.
+This role takes care that `ssh-agent` is registred with your private
+key in all panes and windows of your tmux session.
 
 ### tmux and vim
 
