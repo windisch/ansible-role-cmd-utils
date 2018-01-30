@@ -22,5 +22,5 @@ fhist() {
 # Search the jrnl titles
 fjrnl() {
  title=$(jrnl --short | fzf) &&
- jrnl -on "$(echo $title | cut -c 1-16)"
+ jrnl -on "$(echo $title | cut -c 1-16)" $1
 }
