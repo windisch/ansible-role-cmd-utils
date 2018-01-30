@@ -1,7 +1,7 @@
 # TODO: The name of the package is `go` under macos and suse
 - name: install go
   package:
-    name: golang-go
+    name: '{{ cmd_utils_go_package }}'
     state: latest
   become: true
 
