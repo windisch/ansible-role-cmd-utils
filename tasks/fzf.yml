@@ -3,6 +3,7 @@
   package:
     name: golang-go
     state: latest
+  become: true
 
 - name: Cloning fzf repository
   git:

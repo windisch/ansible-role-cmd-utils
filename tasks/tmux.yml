@@ -2,6 +2,7 @@
   package:
     name: tmux
     state: latest
+  become: true
 
 - name: Copy tmux.conf
   copy:

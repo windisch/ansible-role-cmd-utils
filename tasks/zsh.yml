@@ -2,6 +2,7 @@
   package:
     name: zsh
     state: latest
+  become: true
 
 - name: Install virtualenvwrapper
   pip:
