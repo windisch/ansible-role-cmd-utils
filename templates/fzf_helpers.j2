@@ -1,11 +1,3 @@
-# checkout git branches
-fgit() {
- local branches branch
- branches=$(git branch -vv --all) &&
- branch=$(echo "$branches" | fzf +m) &&
- git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //" | sed -e 's/remotes\/origin\///g')
-}
-
 # cd to selected directory
 fcd() {
  local dir
@@ -46,4 +38,17 @@ fgitshow() {
                 xargs -I % sh -c 'git show --color=always % | less -R') << 'FZF-EOF'
                 {}
 FZF-EOF"
+}
+
+# checkout git branches
+fgit() {
+ local branches branch
+ branches=$(git branch -vv --all) &&
+ branch=$(echo "$branches" | fzf +m) &&
+ git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //" | sed -e 's/remotes\/origin\///g')
+}
+
+fgita() {
+ file=$(git status --short --untracked-files| fzf ) &&
+ git add $file 
 }
