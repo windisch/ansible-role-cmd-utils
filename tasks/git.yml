@@ -41,6 +41,13 @@
     line: "alias gitcm='git commit -m'"
     create: yes
 
+- name: Set alias git add
+  lineinfile:
+    path: "{{ cmd_utils_alias_file }}"
+    line: "alias gita='git add'"
+    create: yes
+
+
 - name: Copy gitignore
   copy:
     src: gitignore
