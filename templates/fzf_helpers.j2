@@ -49,6 +49,6 @@ fgit() {
 }
 
 fgita() {
- file=$(git status --short --untracked-files| fzf ) &&
+ file=$(git status --short --untracked-files| fzf | awk '{print $2;}' ) &&
  git add $file 
 }
