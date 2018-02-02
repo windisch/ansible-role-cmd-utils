@@ -35,6 +35,12 @@
     line: "alias gitv='git log --all --branches --graph --oneline --decorate'"
     create: yes
 
+- name: Set alias git commit
+  lineinfile:
+    path: "{{ cmd_utils_alias_file }}"
+    line: "alias gitcm='git commit -m'"
+    create: yes
+
 - name: Copy gitignore
   copy:
     src: gitignore
