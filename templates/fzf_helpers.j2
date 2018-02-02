@@ -3,7 +3,7 @@ fgit() {
  local branches branch
  branches=$(git branch -vv --all) &&
  branch=$(echo "$branches" | fzf +m) &&
- git checkout -b $(echo "$branch" | awk '{print $1}' | sed "s/.* //" | sed -e 's/origin\///g')
+ git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //" | sed -e 's/remotes\/origin\///g')
 }
 
 # cd to selected directory
