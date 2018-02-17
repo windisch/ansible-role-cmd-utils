@@ -14,8 +14,12 @@
     - virtualenv
     - virtualenvwrapper
 
+- name: Store path to zsh binary
+  shell: which zsh
+  register: cmd_utils_zsh_binary
+ 
 - name: Make zsh default shell
-  user: name={{ ansible_user_id }} shell=/usr/bin/zsh
+  user: name={{ ansible_user_id }} shell={{ cmd_utils_zsh_binary }}
   become: true
 
 - name: Clone oh-my-zsh
