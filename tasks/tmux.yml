@@ -5,8 +5,8 @@
   become: '{{ true if ansible_os_family != "Darwin" else false }}'
 
 - name: Copy tmux.conf
-  copy:
-    src: tmux.conf
+  template:
+    src: tmux.conf.j2
     dest: "{{ cmd_utils_tmux_config_file }}"
 
 # Export TERM variable. This is needed for TMUX to display colors in
