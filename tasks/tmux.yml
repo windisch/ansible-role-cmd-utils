@@ -2,7 +2,7 @@
   package:
     name: tmux
     state: latest
-  become: true
+  become: '{{ true if ansible_os_family != "Darwin" else false }}'
 
 - name: Copy tmux.conf
   copy:

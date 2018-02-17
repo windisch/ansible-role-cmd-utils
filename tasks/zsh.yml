@@ -2,7 +2,7 @@
   package:
     name: zsh
     state: latest
-  become: true
+  become: '{{ true if ansible_os_family != "Darwin" else false }}'
 
 - name: Install virtualenvwrapper
   pip:

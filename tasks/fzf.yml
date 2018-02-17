@@ -1,9 +1,8 @@
-# TODO: The name of the package is `go` under macos and suse
 - name: install go
   package:
     name: '{{ cmd_utils_go_package }}'
     state: latest
-  become: true
+  become: '{{ true if ansible_os_family != "Darwin" else false }}'
 
 - name: Cloning fzf repository
   git:
