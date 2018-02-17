@@ -75,3 +75,7 @@ bind-key -T copy-mode-vi C-\ select-pane -l
 
 # colors
 set -g default-terminal "screen-256color"
+
+# In case that multiple z-shells are installed, make sure that tmux
+# starts the right one
+set-option -g default-shell {{ cmd_utils_zsh_binary }}
