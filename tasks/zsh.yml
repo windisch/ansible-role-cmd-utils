@@ -16,7 +16,10 @@
 
 - name: Store path to zsh binary
   shell: which zsh
-  register: cmd_utils_zsh_binary
+  register: cmd_utils_zsh_binary_which
+
+- set_fact:
+    cmd_utils_zsh_binary: "{{ cmd_utils_zsh_binary_which.stdout }}"
  
 - name: Make zsh default shell
   user: name={{ ansible_user_id }} shell={{ cmd_utils_zsh_binary }}
