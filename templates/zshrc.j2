@@ -22,6 +22,10 @@ plugins=(git)
 #Use correct python in virtualenvwrapper
 export VIRTUALENVWRAPPER_PYTHON={{ cmd_utils_python_bin }}
 
+#Use VIM as default everywhere 
+export EDITOR=vim
+export VISUAL=vim
+
 ###Load commands of virtualenvwrapper
 source `which virtualenvwrapper.sh`
 
