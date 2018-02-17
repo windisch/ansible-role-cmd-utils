@@ -49,3 +49,15 @@ platforms. Hence, it cloned and installed from
 Along the provisioning, the following packages are installed using the
 package manager of your system (make sure that these are availabe):
 `go` (`golang` under debian based systems), `zsh`, `tmux`.
+
+## Shortcuts
+
+- `CTRL-R`: Search command history with `fzf`
+- `ESC-v`: Edit current command with `vim` 
+
+## Aliases
+
+- `gitcm`: Short for `git commit -m`
+- `gitv`: Shows commit tree of `git`
+- `fgit`: Searches and checkouts branches in `git` repository
+- `fgita`: Searches and adds changed files in `git` repository
