@@ -3,3 +3,5 @@ cmd_utils_ssh_rc_file: "{{ cmd_utils_ssh_dir }}/rc"
 
 # GO
 cmd_utils_go_package: "{{ 'go' if ansible_os_family=='Suse' or ansible_os_family=='Darwin' else 'golang-go' }}"
+
+cmd_utils_dircolors_line: "{{ cmd_utils_dircolors_macos if ansible_os_family=='Darwin' else cmd_utils_dircolors_non_mac}}"

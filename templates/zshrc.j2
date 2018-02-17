@@ -4,7 +4,7 @@ export ZSH={{ cmd_utils_omz_path }}
 ZSH_THEME="minimal"
 
 # DIRCOLORS
-eval `dircolors {{ cmd_utils_zsh_dircolors }}`
+{{ cmd_utils_dircolors_line }}
 
 # Do not write commands in history that start with whitespace
 setopt HIST_IGNORE_SPACE
@@ -20,7 +20,7 @@ setopt HIST_IGNORE_SPACE
 plugins=(git)
 
 #Use correct python in virtualenvwrapper
-export VIRTUALENVWRAPPER_PYTHON={{ cmd_utils_python_bin }}
+export VIRTUALENVWRAPPER_PYTHON=`which python3`
 
 ###Load commands of virtualenvwrapper
 source `which virtualenvwrapper.sh`
