@@ -20,7 +20,7 @@ The following software packages are installed and configured:
 
 ### tmux and ssh
 
-This role takes care that `ssh-agent` is registred with your private
+This role takes care that `ssh-agent` is registered with your private
 key in all panes and windows of your tmux session.
 
 ### tmux and vim
@@ -32,7 +32,8 @@ key in all panes and windows of your tmux session.
 
 The `z`-shell is installed and selected to be the default shell. Then,
 [`oh-my-zsh`](http://github.com/robbyrussel/oh-my-zsh), a collection
-of usefol `zsh` tools and sane configurations, is cloned and sourced.
+of useful `zsh` tools and sane configurations, is cloned and sourced.
+Here, the `vim` bindings are enabled.
 
 ### fzf
 
