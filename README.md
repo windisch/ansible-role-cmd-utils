@@ -59,5 +59,6 @@ package manager of your system (make sure that these are availabe):
 
 - `gitcm`: Short for `git commit -m`
 - `gitv`: Shows commit tree of `git`
-- `fgit`: Searches and checkouts branches in `git` repository
-- `fgita`: Searches and adds changed files in `git` repository
+- `fgit`: Fuzzy search of branches in `git` repository
+- `fgita`: Fuzzy search of changed files in `git` repository
+- `fjrln`: Fuzzy search of `jrnl` entry headlines
