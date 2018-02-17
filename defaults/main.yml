@@ -13,9 +13,10 @@ cmd_utils_ssh_dir: "{{ ansible_env.HOME }}/.ssh"
 cmd_utils_zsh_rc: "{{ ansible_env.HOME }}/.zshrc"
 cmd_utils_omz_git_repo: https://github.com/robbyrussell/oh-my-zsh
 cmd_utils_omz_path: "{{ ansible_env.HOME }}/.oh-my-zsh"
-cmd_utils_zsh_dircolors: "{{ ansible_env.HOME }}/.zsh_dircolors"
 
-cmd_utils_python_bin: /usr/bin/python3
+cmd_utils_zsh_dircolors: "{{ ansible_env.HOME }}/.zsh_dircolors"
+cmd_utils_dircolors_macos: "export CLICOLOR=YES"
+cmd_utils_dircolors_non_mac: "eval `dircolors {{ cmd_utils_zsh_dircolors }}`"
 
 # fzf
 cmd_utils_fzf_repo_path: https://github.com/junegunn/fzf.git 
@@ -28,3 +29,4 @@ cmd_utils_alias_file: "{{ ansible_env.HOME }}/.aliases"
 # JRNL
 cmd_utils_jrnl_config_file: "{{ ansible_env.HOME }}/.jrnl_config"
 cmd_utils_jrnl_log_file: "{{ ansible_env.HOME }}/WorkLog"
+
