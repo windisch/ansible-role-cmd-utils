@@ -17,6 +17,12 @@ fjrnl() {
  jrnl -on "$(echo $title | cut -c 1-16)" $1
 }
 
+# Search the jrnl tags
+fjrnltags() {
+ tag=$(jrnl --tags | fzf --tac --no-sort | awk '{print $1}') &&
+ jrnl  "$(echo $tag)" | less
+}
+
 # Kill processes
 fkill() {
  local pid
