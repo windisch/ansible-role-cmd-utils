@@ -44,11 +44,19 @@ Unfortuantely, pre-build binaries for `fzf` are not available for many
 platforms. Hence, it cloned and installed from
 `https://github.com/junegunn/fzf.git`.
 
+### Python
+The python packages `virtualenv` and `virtualenvwrapper` are installed
+(via `pip`) and ensured to be loaded uppon a start of the `z`-shell.
+The interactive python shell `ipython` is installed and some startup
+scripts are placed.
+
 ## Requirements
 
 Along the provisioning, the following packages are installed using the
 package manager of your system (make sure that these are availabe):
 `go` (`golang` under debian based systems), `zsh`, `tmux`.
+
+Moreover, pythons package manager `pip` is assumed to be available.
 
 ## Shortcuts
 
@@ -62,3 +70,6 @@ package manager of your system (make sure that these are availabe):
 - `fgit`: Fuzzy search of branches in `git` repository
 - `fgita`: Fuzzy search of changed files in `git` repository
 - `fjrln`: Fuzzy search of `jrnl` entry headlines
+- `fkill`: Fuzzy search of processes. Selected process gets killed.
+- `p`: Short for `python`
+- `wo`: Short for VirtualEnv command `workon`
