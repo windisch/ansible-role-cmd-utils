@@ -19,8 +19,11 @@ setopt HIST_IGNORE_SPACE
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
-#Use correct python in virtualenvwrapper
+# Use correct python in virtualenvwrapper
 export VIRTUALENVWRAPPER_PYTHON=`which python3`
+
+# Set WORKONHOME for virtualenvwrapper
+export WORKON_HOME={{ cmd_utils_python_workon_home }}
 
 ###Load commands of virtualenvwrapper
 source `which virtualenvwrapper.sh`
