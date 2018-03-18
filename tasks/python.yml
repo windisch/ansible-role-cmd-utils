@@ -1,0 +1,43 @@
+- name: Install virtualenv
+  pip: 
+    name: virtualenv
+    version: 15.1.0
+    executable: pip3
+  become: true
+ 
+- name: Install virtualenvwrapper
+  pip:
+    name: virtualenvwrapper
+    version: 4.8.2
+    executable: pip3
+  become: true
+
+- name: Install ipython
+  pip:
+    name: ipython
+    version: 6.2.1
+    executable: pip3
+  become: true
+
+- name: Set python alias
+  lineinfile:
+    path: "{{ cmd_utils_alias_file }}"
+    line: "alias p='python'"
+    create: yes
+
+- name: Set workon alias
+  lineinfile:
+    path: "{{ cmd_utils_alias_file }}"
+    line: "alias wo='workon'"
+    create: yes
+
+- name: Ensure that ipython startup dir exists
+  file:
+    path: "{{ cmd_utils_ipython_startup }}"
+    state: directory
+    mode: 0755
+
+- name: Copy IPython autoreload script
+  copy:
+    src: ipython_autoreload.py
+    dest: "{{ cmd_utils_ipython_startup }}/00_ipython_autoreload.py"

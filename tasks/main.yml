@@ -1,3 +1,6 @@
+- name: Configure python
+  include_tasks: python.yml
+
 - name: Configure git
   include_tasks: git.yml
 
@@ -12,6 +15,7 @@
 
 - name: Install and configure jrnl
   include_tasks: jrnl.yml
+
 
 - name: Set alias ll
   lineinfile:

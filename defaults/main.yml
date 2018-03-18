@@ -1,4 +1,3 @@
-
 # The default configuration file of tmux
 cmd_utils_tmux_config_file: "{{ ansible_env.HOME }}/.tmux.conf"
 
@@ -30,3 +29,6 @@ cmd_utils_alias_file: "{{ ansible_env.HOME }}/.aliases"
 cmd_utils_jrnl_config_file: "{{ ansible_env.HOME }}/.jrnl_config"
 cmd_utils_jrnl_log_file: "{{ ansible_env.HOME }}/WorkLog"
 
+# IPython
+cmd_utils_ipython: "{{ ansible_env.HOME }}/.ipython"
+cmd_utils_ipython_startup: "{{ cmd_utils_ipython }}/profile_default/startup"

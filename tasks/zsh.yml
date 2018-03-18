@@ -49,15 +49,3 @@
   copy:
     src: dircolors
     dest: "{{ cmd_utils_zsh_dircolors }}"
-
-- name: Set python alias
-  lineinfile:
-    path: "{{ cmd_utils_alias_file }}"
-    line: "alias p='python'"
-    create: yes
-
-- name: Set workon alias
-  lineinfile:
-    path: "{{ cmd_utils_alias_file }}"
-    line: "alias wo='workon'"
-    create: yes
