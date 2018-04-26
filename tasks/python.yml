@@ -4,7 +4,19 @@
     version: 15.1.0
     executable: pip3
   become: true
+
+- name: Upgrade pip3
+  pip:
+    name: pip
+    executable: pip3
+    extra_args: --upgrade
  
+- name: Upgrade pip2
+  pip:
+    name: pip
+    executable: pip
+    extra_args: --upgrade
+
 - name: Install virtualenvwrapper
   pip:
     name: virtualenvwrapper
