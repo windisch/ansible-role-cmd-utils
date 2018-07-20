@@ -32,3 +32,12 @@
 
 ## Ansible
 *.retry 
+
+## Python ##
+*.py[cod]
+*.pytest_cache
+__pycache__/
+*.eggs
+*.egg
+*.egg-info/
+*.coverage
