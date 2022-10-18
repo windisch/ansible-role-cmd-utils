@@ -42,7 +42,7 @@ source {{ cmd_utils_ssh_helpers }}
 source {{ cmd_utils_fzf_helpers }}
 
 # Start ssh agent (from ssh_helpers)
-sshagent_init
+ssh-add --apple-use-keychain ~/.ssh/id_rsa
 
 # Source oh-my-zsh
 source {{ cmd_utils_omz_path }}/oh-my-zsh.sh
