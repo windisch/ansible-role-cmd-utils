@@ -30,6 +30,11 @@
     repo: "{{ cmd_utils_omz_git_repo }}"
     dest: "{{ cmd_utils_omz_path }}"
 
+- name: Clone zsh-autosuggestions
+  git:
+    repo: "{{ cmd_utils_omz_zsh_suggestions_repo }}"
+    dest: "{{ cmd_utils_omz_zsh_suggestions_path }}"
+
 - name: Copy zshrc
   template:
     src: zshrc.j2

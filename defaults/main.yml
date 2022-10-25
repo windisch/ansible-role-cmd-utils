@@ -12,6 +12,8 @@ cmd_utils_ssh_dir: "{{ ansible_env.HOME }}/.ssh"
 cmd_utils_zsh_rc: "{{ ansible_env.HOME }}/.zshrc"
 cmd_utils_omz_git_repo: https://github.com/robbyrussell/oh-my-zsh
 cmd_utils_omz_path: "{{ ansible_env.HOME }}/.oh-my-zsh"
+cmd_utils_omz_zsh_suggestions_repo: https://github.com/zsh-users/zsh-autosuggestions
+cmd_utils_omz_zsh_suggestions_path: "{{ ansible_env.HOME }}/.oh-my-zsh/plugins"
 
 cmd_utils_zsh_dircolors: "{{ ansible_env.HOME }}/.zsh_dircolors"
 cmd_utils_dircolors_macos: "export CLICOLOR=YES"
