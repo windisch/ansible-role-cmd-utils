@@ -61,6 +61,9 @@ export VISUAL=vim
 # Enable VIM movements on command line
 source {{ cmd_utils_omz_path }}/plugins/vi-mode/vi-mode.plugin.zsh
 
+# Edit command line in VIM
+bindkey -M vicmd v edit-command-line
+
 # Auto-completion
 # ---------------
 [[ $- == *i* ]] && source "{{ cmd_utils_fzf_install_path }}/shell/completion.zsh" 2> /dev/null

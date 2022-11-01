@@ -65,11 +65,21 @@ Moreover, pythons package manager `pip` is assumed to be available.
 
 ## Aliases
 
+### GIT
+
 - `gitcm`: Short for `git commit -m`
 - `gitv`: Shows commit tree of `git`
+
+### FZF
+
 - `fgit`: Fuzzy search of branches in `git` repository
 - `fgita`: Fuzzy search of changed files in `git` repository
 - `fjrln`: Fuzzy search of `jrnl` entry headlines
 - `fkill`: Fuzzy search of processes. Selected process gets killed.
+
+### Python
+
 - `p`: Short for `python`
 - `wo`: Short for VirtualEnv command `workon`
+- `register_env_kernel NAME`: Registers kernel of virtual environment in jupyter
+- `remove_env_kernel NAME`: Removes kernel of virtual environment in jupyter
