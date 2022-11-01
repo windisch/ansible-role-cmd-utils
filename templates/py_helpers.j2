@@ -1,0 +1,17 @@
+# Install ipykernel of an virtual environment
+# Usage `register_env_kernel name_of_env`
+register_env_kernel() {
+    echo "Activate $1"
+    workon $1
+    echo "Install ipykernel"
+    pip install jupyter
+    echo "Register kernel"
+    ipython kernel install --name $1 --user
+}
+
+# Removes an ipykernel from kernel specs
+remove_env_kernel() {
+    echo "Removing $1"
+    jupyter kernelspec uninstall $1
+}
+

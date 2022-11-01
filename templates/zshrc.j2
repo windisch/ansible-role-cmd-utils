@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH={{ cmd_utils_omz_path }}
 
-ZSH_THEME="minimal"
+ZSH_THEME="af-magic"
 
 # DIRCOLORS
 {{ cmd_utils_dircolors_line }}
@@ -40,6 +40,7 @@ alias -g H="| head"
 # Source helpers
 source {{ cmd_utils_ssh_helpers }}
 source {{ cmd_utils_fzf_helpers }}
+source {{ cmd_utils_py_helpers }}
 
 # Start ssh agent (from ssh_helpers)
 ssh-add --apple-use-keychain ~/.ssh/id_rsa
