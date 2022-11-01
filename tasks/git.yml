@@ -17,6 +17,12 @@
     value: false
     scope: global
 
+- name: Autosetup of remote branches
+  git_config:
+    name: push.autoSetupRemote
+    value: true
+    scope: global
+
 - name: Use VIM as git merge-tool
   git_config:
     name: merge.tool
