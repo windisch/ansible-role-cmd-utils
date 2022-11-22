@@ -28,6 +28,7 @@ key in all panes and windows of your tmux session.
 `tmux` is configured to work together with my VIM setup (see
 [here](https://github.com/windisch/vim))
 
+
 ### zsh
 
 The `z`-shell is installed and selected to be the default shell. Then,
@@ -62,6 +63,10 @@ Moreover, pythons package manager `pip` is assumed to be available.
 
 - `CTRL-R`: Search command history with `fzf`
 - `ESC-v`: Edit current command with `vim` 
+
+
+Under `iterm2`, use the `option`-key to copy content from a `tmux`
+session to the clipboard.
 
 ## Aliases
 
