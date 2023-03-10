@@ -29,6 +29,12 @@
     value: vimdiff
     scope: global
 
+- name: Disable backup file
+  git_config:
+    name: mergetool.keepBackup
+    value: false
+    scope: global
+
 - name: Git push only current
   git_config:
     name: push.default
